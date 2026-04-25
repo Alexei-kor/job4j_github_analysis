@@ -17,5 +17,5 @@ public class Commit {
     private LocalDateTime date;
     @ManyToOne
     @JoinColumn(name = "repository_id")
-    private Repository repository;
+    private MyRepository repository;
 }
