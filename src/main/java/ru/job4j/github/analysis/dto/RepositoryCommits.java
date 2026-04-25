@@ -12,13 +12,21 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RepositoryCommits {
-    @JsonProperty("commit.author.name")
-    private String author;
+    private Commit commit;
 
-    @JsonProperty("commit.message")
-    private String message;
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class Commit {
+        private Author author;
+        private String message;
 
-    @JsonProperty("commit.author.date")
-    private LocalDateTime date;
-
+        @Data
+        @NoArgsConstructor
+        @AllArgsConstructor
+        public static class Author {
+            private String name;
+            private LocalDateTime date;
+        }
+    }
 }

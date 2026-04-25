@@ -28,10 +28,15 @@ public class GitHubService {
 
     public List<Commit> fetchCommits(String username, String repository) {
         String url = "https://api.github.com/repos/" + username + "/" + repository + "/commits";
+
         ResponseEntity<List<RepositoryCommits>> response = restTemplate.exchange(
                 url, HttpMethod.GET, null,
                 new ParameterizedTypeReference<List<RepositoryCommits>>() {});
-        //return response.getBody();
-        return List.of(new Commit());
+        return response.getBody().stream()
+                .map(commit -> new Commit(
+                        commit.getCommit().getMessage(),
+                        commit.getCommit().getAuthor().getName(),
+                        commit.getCommit().getAuthor().getDate())
+                ).toList();
     }
 }

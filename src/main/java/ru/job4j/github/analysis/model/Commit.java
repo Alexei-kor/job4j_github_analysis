@@ -18,4 +18,11 @@ public class Commit {
     @ManyToOne
     @JoinColumn(name = "repository_id")
     private MyRepository repository;
+
+    public Commit(String message, String author, LocalDateTime date, MyRepository repository) {
+        this.message = message;
+        this.author = author;
+        this.date = date;
+        this.repository = repository;
+    }
 }
