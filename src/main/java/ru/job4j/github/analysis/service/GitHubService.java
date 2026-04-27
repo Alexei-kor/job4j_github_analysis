@@ -9,6 +9,7 @@ import org.springframework.web.client.RestTemplate;
 import ru.job4j.github.analysis.dto.RepositoryCommits;
 import ru.job4j.github.analysis.model.Commit;
 import ru.job4j.github.analysis.model.MyRepository;
+import ru.job4j.github.analysis.repository.GitHubRepository;
 
 import java.util.List;
 
@@ -17,6 +18,9 @@ public class GitHubService {
 
     @Autowired
     private RestTemplate restTemplate;
+
+    @Autowired
+    private GitHubRepository gitHubRepository;
 
     public List<MyRepository> fetchRepositories(String username) {
         String url = "https://api.github.com/users/" + username + "/repos";
@@ -36,7 +40,8 @@ public class GitHubService {
                 .map(commit -> new Commit(
                         commit.getCommit().getMessage(),
                         commit.getCommit().getAuthor().getName(),
-                        commit.getCommit().getAuthor().getDate())
+                        commit.getCommit().getAuthor().getDate(),
+                        gitHubRepository.findByName(repository).get())
                 ).toList();
     }
 }

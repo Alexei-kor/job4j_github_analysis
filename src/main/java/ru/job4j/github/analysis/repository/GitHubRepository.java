@@ -5,6 +5,9 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.Repository;
 import ru.job4j.github.analysis.model.MyRepository;
 
+import java.util.Optional;
+
 public interface GitHubRepository extends CrudRepository<MyRepository, Long>, JpaRepository<MyRepository, Long> {
+    Optional<MyRepository> findByName(String name);
 
 }
