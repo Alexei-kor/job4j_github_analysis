@@ -26,7 +26,9 @@ public class GitHubService {
         String url = "https://api.github.com/users/" + username + "/repos";
         ResponseEntity<List<MyRepository>> response = restTemplate.exchange(
                 url, HttpMethod.GET, null,
-                new ParameterizedTypeReference<List<MyRepository>>() {});
+                new ParameterizedTypeReference<List<MyRepository>>() {
+
+                });
         return response.getBody();
     }
 
@@ -35,7 +37,9 @@ public class GitHubService {
 
         ResponseEntity<List<RepositoryCommits>> response = restTemplate.exchange(
                 url, HttpMethod.GET, null,
-                new ParameterizedTypeReference<List<RepositoryCommits>>() {});
+                new ParameterizedTypeReference<List<RepositoryCommits>>() {
+
+                });
         return response.getBody().stream()
                 .map(commit -> new Commit(
                         commit.getCommit().getMessage(),

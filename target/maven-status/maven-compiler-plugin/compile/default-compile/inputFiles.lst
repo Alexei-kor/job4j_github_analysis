@@ -1,0 +1,11 @@
+C:\project\job4j_github_analysis\src\main\java\ru\job4j\github\analysis\config\WebConfig.java
+C:\project\job4j_github_analysis\src\main\java\ru\job4j\github\analysis\controller\GitHubController.java
+C:\project\job4j_github_analysis\src\main\java\ru\job4j\github\analysis\dto\RepositoryCommits.java
+C:\project\job4j_github_analysis\src\main\java\ru\job4j\github\analysis\GitHubAnalysis.java
+C:\project\job4j_github_analysis\src\main\java\ru\job4j\github\analysis\model\Commit.java
+C:\project\job4j_github_analysis\src\main\java\ru\job4j\github\analysis\model\MyRepository.java
+C:\project\job4j_github_analysis\src\main\java\ru\job4j\github\analysis\repository\GitHubRepository.java
+C:\project\job4j_github_analysis\src\main\java\ru\job4j\github\analysis\service\GitHubRemote.java
+C:\project\job4j_github_analysis\src\main\java\ru\job4j\github\analysis\service\GitHubService.java
+C:\project\job4j_github_analysis\src\main\java\ru\job4j\github\analysis\service\RepositoryService.java
+C:\project\job4j_github_analysis\src\main\java\ru\job4j\github\analysis\service\ScheduledTasks.java
