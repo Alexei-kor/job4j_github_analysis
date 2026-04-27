@@ -11,7 +11,6 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 @EnableScheduling
 @SpringBootApplication
 public class GitHubAnalysis {
-
     public static void main(String[] args) {
         SpringApplication.run(GitHubAnalysis.class, args);
     }
