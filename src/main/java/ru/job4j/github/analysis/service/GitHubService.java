@@ -6,7 +6,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import ru.job4j.github.analysis.dto.RepositoryCommits;
+import ru.job4j.github.analysis.dto.CommitDTO;
 import ru.job4j.github.analysis.model.Commit;
 import ru.job4j.github.analysis.model.MyRepository;
 import ru.job4j.github.analysis.repository.GitHubRepository;
@@ -23,29 +23,10 @@ public class GitHubService {
     private GitHubRepository gitHubRepository;
 
     public List<MyRepository> fetchRepositories(String username) {
-        String url = "https://api.github.com/users/" + username + "/repos";
-        ResponseEntity<List<MyRepository>> response = restTemplate.exchange(
-                url, HttpMethod.GET, null,
-                new ParameterizedTypeReference<List<MyRepository>>() {
-
-                });
-        return response.getBody();
+        return List.of();
     }
 
     public List<Commit> fetchCommits(String username, String repository) {
-        String url = "https://api.github.com/repos/" + username + "/" + repository + "/commits";
-
-        ResponseEntity<List<RepositoryCommits>> response = restTemplate.exchange(
-                url, HttpMethod.GET, null,
-                new ParameterizedTypeReference<List<RepositoryCommits>>() {
-
-                });
-        return response.getBody().stream()
-                .map(commit -> new Commit(
-                        commit.getCommit().getMessage(),
-                        commit.getCommit().getAuthor().getName(),
-                        commit.getCommit().getAuthor().getDate(),
-                        gitHubRepository.findByName(repository).get())
-                ).toList();
+        return List.of();
     }
 }

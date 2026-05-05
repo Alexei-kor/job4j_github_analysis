@@ -13,6 +13,9 @@
             <column name="message" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
+            <column name="sha" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
             <column name="author" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>

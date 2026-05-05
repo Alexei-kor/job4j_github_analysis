@@ -22,12 +22,12 @@ public class GitHubController {
 
     @GetMapping("/repositories")
     public List<MyRepository> getAllRepositories() {
-        return gitHubService.fetchRepositories("Alexei-kor");
+        return repositoryService.getRepositoriesAll();
     }
 
     @GetMapping("/commits/{repo}")
     public List<Commit> getCommits(@PathVariable(value = "repo") String repo) {
-         return gitHubService.fetchCommits("Alexei-kor", repo);
+         return repositoryService.getCommitsAllForRepo(repo);
     }
 
     @PostMapping("/repository")

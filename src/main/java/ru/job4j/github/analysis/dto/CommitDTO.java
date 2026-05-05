@@ -1,18 +1,17 @@
 package ru.job4j.github.analysis.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.job4j.github.analysis.model.MyRepository;
 
 import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RepositoryCommits {
+public class CommitDTO {
     private Commit commit;
+    private String sha;
 
     @Data
     @NoArgsConstructor
